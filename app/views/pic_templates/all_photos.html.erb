@@ -1,1 +1,11 @@
 <h1>All photos here</h1>
+
+<%Photo.all.each do |photo| %>
+    <p> 
+        <img class="img-fluid" alt="Responsive image" src=<%=photo.source%>>
+    </p>
+    <li><a href="/photos/<%=photo.id%>">Show Details</a></li>
+    <li><a href="/photos/<%=photo.id%>/edit">Edit</a></li>
+    <li><a href="/photos/delete_photo/<%=photo.id%>">Delete</a></li>
+    <p></p>
+<%end%>

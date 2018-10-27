@@ -9,6 +9,12 @@ def display_blank_form
 end
 
 def add_photo_to_list
+    @url = params.fetch("the_source").to_s
+    @caption = params.fetch("the_caption").to_s
+    p = Photo.new
+    p.source=@url
+    p.caption=@caption
+    p.save
     render("pic_templates/new_photo_added.html.erb")
 end
 
